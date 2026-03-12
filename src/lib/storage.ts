@@ -27,5 +27,7 @@ export const loadFromStorage = <T>(key: string, fallback: T): T => {
 export const removeFromStorage = (key: string): void => {
   try {
     localStorage.removeItem(key);
-  } catch {}
+  } catch (_e) {
+    // ignore
+  }
 };

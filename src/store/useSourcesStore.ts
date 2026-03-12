@@ -4,16 +4,6 @@ import type {
   SourcesState,
   SourceKey,
   SourceMetadata,
-  BudgetCollectorChargesRecord,
-  BudgetCollectorFTERecord,
-  AlcyoneETPFPRecord,
-  AlcyoneCoutETPRecord,
-  AlcyoneETPMoyenRecord,
-  ExpansionRecord,
-  ETPExterneRecord,
-  BesoinRessourcesRecord,
-  ChargesAdditionnellesRecord,
-  FluxRecord,
 } from '../types/data';
 
 interface SourcesStore {

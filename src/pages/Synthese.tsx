@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from 'react';
 import { useDataStore } from '../store/useDataStore';
-import { useParametresStore } from '../store/useParametresStore';
 import { ExportButton } from '../components/ui/ExportButton';
 import { getUniqueValues } from '../lib/pivotEngine';
 import * as XLSX from 'xlsx';
@@ -26,11 +25,9 @@ interface PivotRowData {
 
 export const Synthese: React.FC = () => {
   const { allData } = useDataStore();
-  const { parametres } = useParametresStore();
   const [filterEntite, setFilterEntite] = useState<string[]>([]);
   const [filterHub, setFilterHub] = useState<string[]>([]);
   const [filterProcess, setFilterProcess] = useState<string[]>([]);
-  const [expandedKeys, setExpandedKeys] = useState<Set<string>>(new Set());
 
   // Exclude expansion source
   const data = useMemo(() =>

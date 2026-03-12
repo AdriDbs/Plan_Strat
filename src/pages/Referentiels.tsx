@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, Trash2 } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
 import { useReferentielsStore } from '../store/useReferentielsStore';
 import { ExportButton } from '../components/ui/ExportButton';
 import { parseReferentielFile } from '../lib/excelParser';

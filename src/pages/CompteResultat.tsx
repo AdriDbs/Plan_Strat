@@ -120,6 +120,7 @@ export const CompteResultat: React.FC = () => {
     return result;
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const flatRows = useMemo(() => flattenTree(repHierarchy), [repHierarchy, expandedKeys]);
 
   const handleExport = () => {

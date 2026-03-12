@@ -22,9 +22,8 @@ function App() {
   const { recalculate } = useDataStore();
 
   // Initial calculation on app load
-  useEffect(() => {
-    recalculate();
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { recalculate(); }, []);
 
   return (
     <HashRouter>
