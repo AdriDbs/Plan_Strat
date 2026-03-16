@@ -10,9 +10,13 @@ export interface TauxChargementParCategorie {
 
 export interface Hypotheses {
   anneeReference: number;
+  tauxInflation: number;
   tauxChargement: {
     France: TauxChargementParCategorie;
     Pologne: TauxChargementParCategorie;
+    'Nearshoring Autre': TauxChargementParCategorie;
+    Offshoring: TauxChargementParCategorie;
+    Outsourcing: TauxChargementParCategorie;
   };
   tauxMobilite: number;
   tauxEvolutionCharges: {
@@ -25,9 +29,13 @@ export interface Hypotheses {
 
 export const DEFAULT_HYPOTHESES: Hypotheses = {
   anneeReference: 2025,
+  tauxInflation: 0.02,
   tauxChargement: {
-    France: { 2026: 0.02, 2027: 0.02, 2028: 0.02, 2029: 0.02, 2030: 0.02 },
-    Pologne: { 2026: 0.045, 2027: 0.045, 2028: 0.045, 2029: 0.045, 2030: 0.045 },
+    France:             { 2026: 0.02,  2027: 0.02,  2028: 0.02,  2029: 0.02,  2030: 0.02  },
+    Pologne:            { 2026: 0.045, 2027: 0.045, 2028: 0.045, 2029: 0.045, 2030: 0.045 },
+    'Nearshoring Autre':{ 2026: 0.02,  2027: 0.02,  2028: 0.02,  2029: 0.02,  2030: 0.02  },
+    Offshoring:         { 2026: 0.02,  2027: 0.02,  2028: 0.02,  2029: 0.02,  2030: 0.02  },
+    Outsourcing:        { 2026: 0.02,  2027: 0.02,  2028: 0.02,  2029: 0.02,  2030: 0.02  },
   },
   tauxMobilite: 0.03,
   tauxEvolutionCharges: {},

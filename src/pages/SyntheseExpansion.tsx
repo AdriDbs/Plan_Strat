@@ -85,12 +85,12 @@ export const SyntheseExpansion: React.FC = () => {
         ))}
         <ExportButton onClick={handleExport} disabled={pivotRows.length === 0} />
       </div>
-      <div style={{ border: '1px solid #1e2d45', borderRadius: 8, overflow: 'auto' }}>
-        <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: 12 }}>
+      <div style={{ border: '1px solid #1e2d45', borderRadius: 8, overflow: 'auto', maxHeight: '70vh' }}>
+        <table style={{ borderCollapse: 'separate', borderSpacing: 0, width: '100%', fontSize: 12, minWidth: 'max-content' }}>
           <thead>
             <tr>
               {['CDR', 'Nom CDR', 'Process', 'Indicateur', ...YEARS.map(String)].map(h => (
-                <th key={h} style={{ background: YEARS.map(String).includes(h) ? '#111820' : '#111827', color: YEARS.map(String).includes(h) ? '#e8451a' : '#94a3b8', padding: '8px 12px', textAlign: YEARS.map(String).includes(h) ? 'right' : 'left', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, whiteSpace: 'nowrap' }}>{h}</th>
+                <th key={h} style={{ background: YEARS.map(String).includes(h) ? '#111820' : '#111827', color: YEARS.map(String).includes(h) ? '#e8451a' : '#94a3b8', padding: '8px 12px', textAlign: YEARS.map(String).includes(h) ? 'right' : 'left', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, whiteSpace: 'nowrap', position: 'sticky', top: 0, zIndex: 20 }}>{h}</th>
               ))}
             </tr>
           </thead>

@@ -187,7 +187,9 @@ export function buildConsolidation(
   }
 
   // etp_externe → conserver le Type_indicateur de la ligne source
+  // Only historical (≤2026); projected years (≥2027) are passed separately to buildProjections
   for (const row of sources.etp_externe) {
+    if (Number(row.Année) > 2026) continue;
     const rec: ConsolidatedRecord = {
       Type_indicateur: row.Type_indicateur != null ? String(row.Type_indicateur) : 'ETP_Externe',
       Entité: String(row.Entité ?? ''),
