@@ -139,13 +139,13 @@ export const CompteResultat: React.FC = () => {
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 16 }}>
         <ExportButton onClick={handleExport} disabled={repHierarchy.length === 0} />
       </div>
-      <div style={{ border: '1px solid #1e2d45', borderRadius: 8, overflow: 'auto' }}>
-        <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: 12 }}>
+      <div style={{ border: '1px solid #1e2d45', borderRadius: 8, overflow: 'auto', maxHeight: '70vh' }}>
+        <table style={{ borderCollapse: 'separate', borderSpacing: 0, width: '100%', fontSize: 12, minWidth: 'max-content' }}>
           <thead>
             <tr>
-              <th style={{ background: '#111827', color: '#94a3b8', padding: '8px 12px', textAlign: 'left', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, position: 'sticky', top: 0, zIndex: 10, minWidth: 200 }}>Code / Intitulé</th>
+              <th style={{ background: '#111827', color: '#94a3b8', padding: '8px 12px', textAlign: 'left', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, position: 'sticky', top: 0, zIndex: 20, minWidth: 200 }}>Code / Intitulé</th>
               {YEARS.map(y => (
-                <th key={y} style={{ background: '#111820', color: '#e8451a', padding: '8px 12px', textAlign: 'right', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, position: 'sticky', top: 0, zIndex: 10, whiteSpace: 'nowrap' }}>{y}</th>
+                <th key={y} style={{ background: '#111820', color: '#e8451a', padding: '8px 12px', textAlign: 'right', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, position: 'sticky', top: 0, zIndex: 20, whiteSpace: 'nowrap' }}>{y}</th>
               ))}
             </tr>
           </thead>

@@ -55,9 +55,9 @@ export function DataTable<T>({
 
   return (
     <div style={{ border: '1px solid #1e2d45', borderRadius: 8, overflow: 'hidden' }}>
-      {/* Header */}
-      <div style={{ overflowX: 'auto', background: '#111827' }}>
-        <table style={{ borderCollapse: 'collapse', width: '100%', minWidth: 'max-content' }}>
+      {/* Unified scrollable container with sticky header */}
+      <div ref={parentRef} style={{ height, overflowY: 'auto', overflowX: 'auto', background: '#111827' }}>
+        <table style={{ borderCollapse: 'separate', borderSpacing: 0, width: '100%', minWidth: 'max-content' }}>
           <thead>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
@@ -79,6 +79,9 @@ export function DataTable<T>({
                       whiteSpace: 'nowrap',
                       cursor: header.column.getCanSort() ? 'pointer' : undefined,
                       userSelect: 'none',
+                      position: 'sticky',
+                      top: 0,
+                      zIndex: 20,
                     }}
                   >
                     {flexRender(header.column.columnDef.header, header.getContext())}
@@ -88,12 +91,6 @@ export function DataTable<T>({
               </tr>
             ))}
           </thead>
-        </table>
-      </div>
-
-      {/* Body */}
-      <div ref={parentRef} style={{ height, overflowY: 'auto', overflowX: 'auto' }}>
-        <table style={{ borderCollapse: 'collapse', width: '100%', minWidth: 'max-content' }}>
           <tbody>
             {paddingTop > 0 && <tr><td style={{ height: paddingTop }} /></tr>}
             {virtualRows.map(virtualRow => {

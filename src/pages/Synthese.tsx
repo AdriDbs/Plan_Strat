@@ -120,15 +120,15 @@ export const Synthese: React.FC = () => {
       </div>
 
       {/* Table */}
-      <div style={{ border: '1px solid #1e2d45', borderRadius: 8, overflow: 'auto' }}>
-        <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: 12 }}>
+      <div style={{ border: '1px solid #1e2d45', borderRadius: 8, overflow: 'auto', maxHeight: '70vh' }}>
+        <table style={{ borderCollapse: 'separate', borderSpacing: 0, width: '100%', fontSize: 12, minWidth: 'max-content' }}>
           <thead>
             <tr>
-              <th style={{ background: '#111827', color: '#94a3b8', padding: '8px 12px', textAlign: 'left', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>CDR</th>
-              <th style={{ background: '#111827', color: '#94a3b8', padding: '8px 12px', textAlign: 'left', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Nom CDR</th>
-              <th style={{ background: '#111827', color: '#94a3b8', padding: '8px 12px', textAlign: 'left', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Indicateur</th>
+              <th style={{ background: '#111827', color: '#94a3b8', padding: '8px 12px', textAlign: 'left', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, textTransform: 'uppercase', whiteSpace: 'nowrap', position: 'sticky', top: 0, zIndex: 20 }}>CDR</th>
+              <th style={{ background: '#111827', color: '#94a3b8', padding: '8px 12px', textAlign: 'left', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, textTransform: 'uppercase', whiteSpace: 'nowrap', position: 'sticky', top: 0, zIndex: 20 }}>Nom CDR</th>
+              <th style={{ background: '#111827', color: '#94a3b8', padding: '8px 12px', textAlign: 'left', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, textTransform: 'uppercase', whiteSpace: 'nowrap', position: 'sticky', top: 0, zIndex: 20 }}>Indicateur</th>
               {YEARS.map(y => (
-                <th key={y} style={{ background: '#111820', color: '#e8451a', padding: '8px 12px', textAlign: 'right', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, whiteSpace: 'nowrap' }}>{y}</th>
+                <th key={y} style={{ background: '#111820', color: '#e8451a', padding: '8px 12px', textAlign: 'right', borderBottom: '1px solid #1e2d45', fontFamily: 'DM Mono, monospace', fontSize: 10, whiteSpace: 'nowrap', position: 'sticky', top: 0, zIndex: 20 }}>{y}</th>
               ))}
             </tr>
           </thead>
